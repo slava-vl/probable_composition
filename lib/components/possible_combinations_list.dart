@@ -10,7 +10,9 @@ class PossibleCombinationsList extends StatelessWidget {
   Widget build(BuildContext context) {
     final combinations = context.watch<HomePageViewModel>().combinations;
     return combinations.isEmpty
-        ? const Text('Ничего не найдено')
-        : Text(combinations);
+        ? const Text('Nothing')
+        : Column(
+            children: combinations.map((e) => Text(e)).toList(),
+          );
   }
 }
